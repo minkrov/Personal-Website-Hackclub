@@ -1,0 +1,99 @@
+/* Simple styles for my personal site.
+   Nothing fancy — just plain colors and readable text. */
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #faf9f6;
+  color: #222;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- navigation --- */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 16px 0;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  text-decoration: none;
+  color: #222;
+}
+
+nav a:hover,
+nav a.active {
+  color: #c75b39;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- content --- */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.caption {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0;
+}
+
+h2 {
+  margin-bottom: 4px;
+}
+
+/* --- button --- */
+
+.button {
+  display: inline-block;
+  background-color: #c75b39;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #a94a2d;
+}
+
+/* --- footer --- */
+
+footer {
+  border-top: 1px solid #ddd;
+  margin-top: 48px;
+  padding: 20px 0 40px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #c75b39;
+}
