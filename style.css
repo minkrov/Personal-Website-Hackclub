@@ -1,5 +1,5 @@
-/* Simple styles for my personal site.
-   Nothing fancy — just plain colors and readable text. */
+/* Styles for my personal site.
+   Plain background, readable text, a little bit of fun. */
 
 body {
   font-family: "Nunito", sans-serif;
@@ -7,6 +7,11 @@ body {
   color: #222;
   margin: 0;
   line-height: 1.6;
+  border-top: 6px solid #c75b39; /* little strip of color up top */
+}
+
+::selection {
+  background-color: #ffe0cc; /* nice color when selecting text */
 }
 
 .wrap {
@@ -21,43 +26,89 @@ nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 8px;
   padding: 16px 0;
   margin: 0;
   border-bottom: 1px solid #ddd;
 }
 
 nav a {
+  display: inline-block;
   text-decoration: none;
   color: #222;
-}
-
-nav a:hover,
-nav a.active {
-  color: #c75b39;
+  padding: 4px 12px;
+  border-radius: 999px; /* pill shape */
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: #f1e5dc;
+  color: #c75b39;
+  text-decoration: none;
 }
 
-/* --- content --- */
+nav a.active,
+nav a.active:hover {
+  background-color: #c75b39;
+  color: #fff;
+}
+
+/* --- headings & content --- */
+
+h1 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 5px;
+  background-color: #2a9d8f; /* teal underline */
+  border-radius: 3px;
+  margin-top: 8px;
+}
+
+h2 {
+  font-weight: 800;
+  margin-top: 28px;
+  margin-bottom: 6px;
+  border-left: 5px solid #2a9d8f;
+  padding-left: 10px;
+}
+
+main a {
+  color: #c75b39;
+}
+
+main a:hover {
+  color: #8f3a20;
+}
 
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  border: 1px solid #ddd;
-  margin: 10px 0;
+  background: #fff;
+  padding: 8px;
+  border: 1px solid #e3ded6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transform: rotate(-0.8deg); /* slightly askew, like a photo on a desk */
+  margin: 18px 0 4px;
+  transition: transform 0.2s ease;
+}
+
+img:hover {
+  transform: rotate(0deg) translateY(-2px);
 }
 
 .caption {
   font-size: 0.85rem;
   color: #777;
-  margin-top: 0;
-}
-
-h2 {
-  margin-bottom: 4px;
+  font-style: italic;
+  margin-top: 2px;
 }
 
 /* --- button --- */
@@ -66,25 +117,33 @@ h2 {
   display: inline-block;
   background-color: #c75b39;
   color: #fff;
-  padding: 10px 20px;
+  padding: 11px 22px;
   border: none;
-  border-radius: 4px;
+  border-bottom: 3px solid #8f3a20; /* chunky edge instead of a shadow */
+  border-radius: 6px;
   font-size: 1rem;
+  font-weight: 700;
   font-family: inherit;
   text-decoration: none;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 14px;
+  transition: transform 0.12s ease, background-color 0.12s ease;
 }
 
 .button:hover {
   background-color: #a94a2d;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: translateY(1px);
 }
 
 /* --- footer --- */
 
 footer {
   border-top: 1px solid #ddd;
-  margin-top: 48px;
+  margin-top: 52px;
   padding: 20px 0 40px;
   font-size: 0.9rem;
   color: #555;
